@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smitle – Gifting Made Smart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #fffafc;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #fff;
+      padding: 4rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .logo-img {
+      width: 140px;
+      height: auto;
+    }
+    .tagline {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #555;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    .section h2 {
+      color: #222;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #666;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    .feature {
+      background: #ffeef2;
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .feature h3 {
+      margin: 0.5rem 0;
+      color: #d73453;
+    }
+    .footer {
+      background: #fceef1;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .legal-links a {
+      color: #ff4c69;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .notify-form input[type="email"] {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 70%;
+      max-width: 300px;
+      margin-right: 0.5rem;
+    }
+    .notify-form button {
+      padding: 1rem 1.5rem;
+      background-color: #ff4c69;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .countdown {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      color: #d73453;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Smitle Logo" class="logo-img">
+    <div class="tagline">Smarter Gifting Starts Here – Discover, Share, and Earn on Every Gift</div>
+  </header>
+
+  <section class="section" id="about">
+    <h2>Why Smitle?</h2>
+    <p>Because gifting shouldn’t be stressful. Smitle brings together convenience, personalization, and rewards – making it easier than ever to show you care. From birthdays to just-because surprises, Smitle helps you send love and earn joy — one gift at a time.</p>
+  </section>
+
+  <section class="section" id="features">
+    <h2>What Makes Smitle Special?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>🎁 Curated Gifting</h3>
+        <p>Find handpicked gifts for every occasion — birthdays, weddings, promotions and more.</p>
+      </div>
+      <div class="feature">
+        <h3>🛒 Trusted Stores</h3>
+        <p>Shop confidently from Amazon, Flipkart, Nykaa and other major platforms.</p>
+      </div>
+      <div class="feature">
+        <h3>💸 Earn Rewards</h3>
+        <p>Get cashback or affiliate benefits with every gift purchase through Smitle.</p>
+      </div>
+      <div class="feature">
+        <h3>📦 Track & Remember</h3>
+        <p>Stay organized with reminders, past gifts tracking, and smart event planning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>🔍 Discover</h3>
+        <p>Explore trending gift boxes tailored to each occasion and person.</p>
+      </div>
+      <div class="feature">
+        <h3>🛍️ Tap & Shop</h3>
+        <p>Click to buy directly through affiliate-powered secure checkout links.</p>
+      </div>
+      <div class="feature">
+        <h3>🎉 Celebrate</h3>
+        <p>Give with love and enjoy the joy of giving — made even smarter with Smitle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cta-final">
+    <h2>Smitle is Launching Soon</h2>
+    <p>Be the first to know when Smitle launches! Sign up below and we'll notify you.</p>
+    <form class="notify-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+  </section>
+
+  <div class="footer">
+    <p>&copy; 2025 Smitle. All rights reserved.</p>
+    <p>📧 info@smitle.com | 📞 +1 787 676 5289</p>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
+
+  <script>
+    const launchDate = new Date("2025-09-01T00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
+</html>
